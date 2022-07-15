@@ -33,4 +33,6 @@ jobs:
         aws-region: us-east-1
         role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
     - name: S3Sync
-      run: aws s3 sync public s3://$STEP_S3_BUCKET
+      run: pwd && ls -la
+    - name: S3Sync
+      run: aws s3 sync public/ s3://$STEP_S3_BUCKET
