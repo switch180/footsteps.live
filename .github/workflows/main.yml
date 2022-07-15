@@ -10,7 +10,7 @@ jobs:
   buildAndDeploy:
     runs-on: ubuntu-latest
     env:
-      STEP_S3_BUCKET: 'footsteps.live'
+      STEP_S3_BUCKET: 'footsteps-site'
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -26,7 +26,5 @@ jobs:
       with:
         aws-region: us-east-1
         role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
-    - name: S3Sync
-      run: pwd && ls -la
     - name: S3Sync
       run: aws s3 sync public/ s3://$STEP_S3_BUCKET
