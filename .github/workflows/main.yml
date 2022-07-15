@@ -1,4 +1,4 @@
-ame: PushToProd
+name: PushToProd
 
 permissions:
   id-token: write
@@ -8,7 +8,6 @@ on:
       website:
         description: 'Name of the S3 bucket aka website to publish to'
         default: 'footsteps.live'
-on:
   workflow_dispatch:
     inputs:
       website:
