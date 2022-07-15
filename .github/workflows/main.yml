@@ -32,7 +32,5 @@ jobs:
       with:
         aws-region: us-east-1
         role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
-    - name: Build Assets
-      run: python3 ./.github/scripts/build-assets.py
     - name: S3Sync
       run: aws s3 sync public s3://$STEP_S3_BUCKET --dry-run
